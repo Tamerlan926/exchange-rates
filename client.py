@@ -33,9 +33,17 @@ class MiniConverter(QWidget):
         self.combo2.setCurrentText("RUB") # По умолчанию рубли
         
 
-        self.btn = QPushButton("Сравнить / Конвертировать")
+        self.btn = QPushButton(" Конвертировать")
         self.btn.clicked.connect(self.do_convert)
-        self.btn.setStyleSheet("background-color: #4CAF50; color: white; padding: 10px; border-radius: 5px;")
+        self.btn.setFixedHeight(50)  # Высота кнопки — 50 пикселей (было ~30)
+        self.btn.setFont(QFont("Arial", 12, QFont.Bold))  # Жирный шрифт покрупнее
+        self.btn.setStyleSheet("""
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px; 
+    border-radius: 8px;
+    font-weight: bold;
+""")
         
 
         
