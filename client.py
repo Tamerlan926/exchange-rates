@@ -44,13 +44,20 @@ class MiniConverter(QWidget):
     border-radius: 8px;
     font-weight: bold;
 """)
-        
 
-        
+
+
+        spacer = QLabel("")
+        spacer.setFixedHeight(15) 
+        layout.addWidget(spacer)
+
         self.res_label = QLabel("Результат: ---")
         self.res_label.setAlignment(Qt.AlignCenter)
-        self.res_label.setFont(QFont("Arial", 12, QFont.Bold))
-        
+        self.res_label.setFont(QFont("Arial", 14, QFont.Bold))  
+        self.res_label.setStyleSheet("color: black;")  
+
+        layout.addWidget(self.res_label)
+    
 
         layout.addWidget(self.label1)
         layout.addWidget(self.combo1)
