@@ -43,7 +43,6 @@ async def get_rates():
                 if resp.status_code == 200:
                     data = resp.json()
                     new_rates = data.get("conversion_rates", {})
-                    # Проверяем, есть ли нужные нам валюты
                     if all(curr in new_rates for curr in ["USD", "EUR", "RUB", "GBP", "JPY", "CNY"]):
                         rates_cache = new_rates
                         last_update = time.time()
